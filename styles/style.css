@@ -76,8 +76,8 @@ body{
 }
 
 .homepage-logo img{
-	width:160px;
-	margin-left:auto;
+	width:210px;
+	margin-left:110px;
 	margin-right:auto;
 	margin-top:40px;	
 	margin-bottom:40px;	
@@ -297,9 +297,10 @@ body{
 @media (min-width:767px) and (orientation:portrait){
 	
 	.homepage-logo img{
-		width:200px;	
+		width:350px;	
 		margin-top:60px;	
 		margin-bottom:60px;
+		margin-bottom:350px;
 	}
 
 	.homepage-navigation{
