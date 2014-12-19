@@ -14,7 +14,7 @@
 <link rel="apple-touch-startup-image" sizes="1536x2008" href="images/splash/splash-screen-ipad-portrait-retina.png"   media="(device-width: 768px)	and (orientation: portrait)	and (-webkit-device-pixel-ratio: 2)"/>
 <link rel="apple-touch-startup-image" sizes="1496x2048" href="images/splash/splash-screen-ipad-landscape-retina.png"   media="(device-width: 768px)	and (orientation: landscape)	and (-webkit-device-pixel-ratio: 2)"/>
 
-<title>Epsilon Mobile Framework - Version 2.0</title>
+<title>Clinicas Guang An Men</title>
 
 <link href="styles/style.css"     		 rel="stylesheet" type="text/css">
 <link href="styles/framework.css" 		 rel="stylesheet" type="text/css">
@@ -42,11 +42,19 @@
 </head>
 <body class="landing-page">
 
+        <script type="text/javascript" charset="utf-8" src="phonegap.js"></script> <!-- Llibreria PhoneGap -->
+        <script type="text/javascript" charset="utf-8" src="PushNotification.js"></script> <!-- Llibreria plugin Push -->
+        <script type="text/javascript" charset="utf-8" src="js/push.js"></script> <!-- Funcions PushWoosh -->
+	
+		<script type="text/javascript">
+            app.initialize();
+        </script>
+
 <div id="preloader">
 	<div id="status">
     	<p class="center-text">
-			Loading the content...
-            <em>Loading depends on your connection speed!</em>
+			Cargando...
+            <em>La carga depende de la velocidad de conexión...</em>
         </p>
     </div>
 </div>
@@ -61,34 +69,34 @@
     <div class="homepage-navigation">
     	<a class="animate fadeIn" 	 data-wow-delay="1.05s" href="homepage.html">
         	<i class="fa fa-home"></i>
-            <em>Home</em>
+            <em>¿Quienes somos?</em>
         </a>
         <a class="animate fadeIn"	data-wow-duration="1s" data-wow-delay="1.10s" href="typography.html">
         	<i class="fa fa-pencil"></i>
-            <em>Type</em>
+            <em>Técnicas</em>
         </a>    
         <a class="animate fadeIn"	data-wow-duration="1s" data-wow-delay="1.15s" href="jquery.html">
         	<i class="fa fa-cog"></i>
-            <em>jQuery</em>
+            <em>Policlinicas</em>
         </a>
         <a class="animate fadeIn" 	data-wow-duration="1s" data-wow-delay="1.20s"href="gallery.html">
         	<i class="fa fa-camera"></i>
-            <em>Gallery</em>
+            <em>Galeria</em>
         </a>
         <a class="animate fadeIn"	data-wow-duration="1s" data-wow-delay="1.25s" href="portfolio.html">
         	<i class="fa fa-picture-o"></i>
-            <em>Portfolio</em>
+            <em>Cita online</em>
         </a>
         <a class="animate fadeIn"	data-wow-duration="1s" data-wow-delay="1.30s" href="contact.html">
         	<i class="fa fa-envelope"></i>
-            <em>Contact</em>
+            <em>Contacto</em>
         </a>
     </div>
     
     <div class="footer">
-    	<a href="#" class="facebook-footer animate fadeIn" data-wow-delay="1.35s"><i class="fa fa-facebook"></i></a>
-        <a href="#" class="google-footer   animate fadeIn" data-wow-delay="1.40s"><i class="fa fa-google"></i></a>
-        <a href="#" class="twitter-footer  animate fadeIn" data-wow-delay="1.45s"><i class="fa fa-twitter"></i></a>
+    	<a href="https://www.facebook.com/ClinicasGAM?ref=ts&fref=ts" class="facebook-footer animate fadeIn" data-wow-delay="1.35s"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.youtube.com/user/guanganmen" class="youtube-footer   animate fadeIn" data-wow-delay="1.40s"><i class="fa fa-youtube"></i></a>
+        <a href="https://twitter.com/FEMTC" class="twitter-footer  animate fadeIn" data-wow-delay="1.45s"><i class="fa fa-twitter"></i></a>
         <em class="animate fadeInUpBig">Copyright 2014. <br> All rights reserved</em>
     
     </div>
