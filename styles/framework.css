@@ -60,6 +60,7 @@ p {
 	margin-bottom: 30px;
 	font-size:12px;
 	letter-spacing:0px;
+	text-align:justify; /* Alvaro */
 }
 
 p > a {
