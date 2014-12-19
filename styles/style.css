@@ -84,7 +84,7 @@ body{
 }
 
 .homepage-navigation{
-	width:282px;
+	width:250px; /* Alvaro - original 282 */
 	margin-left:auto;
 	margin-right:auto;	
 }
