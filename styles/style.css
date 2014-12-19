@@ -94,6 +94,7 @@ body{
 	margin-left:12px;
 	margin-right:12px;
 	margin-bottom:40px;
+	width:70px; /* Alvaro */
 }
 
 .homepage-navigation a i{
