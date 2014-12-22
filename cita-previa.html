@@ -38,33 +38,7 @@
 <script type="text/javascript" src="scripts/framework.js"></script>
 <script type="text/javascript" src="scripts/framework.launcher.js"></script>
 
-<script>
-$.post('http://www.clinicasguanganmen.es/m/solicita-cita.php', {
 
-    // These are the names of the form values
-
-    nombre: $('#nombre').val(),
-    email: $('#email').val(),
-    centro: $('#centro').val(),
-    fecha: $('#fecha').val()
-
-    // HTML function
-
-    }, function (html) {
-        // Place the HTML in a astring
-        var response=html;
-
-        // PHP was done and email sent
-        if (response=="success") {
-            alert("Solicitud enviada!"); 
-        } else {
-
-            // Error postback
-            alert("Disculpa, es necesario rellenar todos los campos!"); 
-        return false;
-    }
-});
-</script>
 
 </head>
 <body>
@@ -228,7 +202,33 @@ $.post('http://www.clinicasguanganmen.es/m/solicita-cita.php', {
         </div>
     </div>
 </div>
+<script>
+$.post('http://www.clinicasguanganmen.es/m/solicita-cita.php', {
 
+    // These are the names of the form values
+
+    nombre: $('#nombre').val(),
+    email: $('#email').val(),
+    centro: $('#centro').val(),
+    fecha: $('#fecha').val()
+
+    // HTML function
+
+    }, function (html) {
+        // Place the HTML in a astring
+        var response=html;
+
+        // PHP was done and email sent
+        if (response=="success") {
+            alert("Solicitud enviada!"); 
+        } else {
+
+            // Error postback
+            alert("Disculpa, es necesario rellenar todos los campos!"); 
+        return false;
+    }
+});
+</script>
 </body>
 </html>
 
