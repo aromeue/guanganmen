@@ -39,7 +39,57 @@
 <script type="text/javascript" src="scripts/framework.launcher.js"></script>
 
 
+<script>
+function envia() {
+	
+	$.ajax({
+		type:'POST',
+		data:{
+			nombre: $('#nombre').val(),
+			email: $('#email').val(),
+			centro: $('#centro').val(),
+			fecha: $('#fecha').val()
+		},
+		url:"http://www.clinicasguanganmen.es/m/solicita-cita.php",
+		dataType:'json',
+		success: function(data) {
+			alert("Olee :-)");
+		},
+		error: function(xhr, type) {
+			alert("Vaya :-(");
+		}
+	});
+}
 
+/*	
+	$.post('http://www.clinicasguanganmen.es/m/solicita-cita.php', {
+	
+		// These are the names of the form values
+	
+		nombre: $('#nombre').val(),
+		email: $('#email').val(),
+		centro: $('#centro').val(),
+		fecha: $('#fecha').val()
+	
+		// HTML function
+	
+		}, function (html) {
+			// Place the HTML in a astring
+			var response=html;
+	
+			// PHP was done and email sent
+			if (response=="Success") {
+				alert("Solicitud enviada!"); 
+			} else {
+	
+				// Error postback
+				alert("Disculpa, es necesario rellenar todos los campos!"); 
+			return false;
+		}
+	});
+});
+*/
+</script>
 </head>
 <body>
 
@@ -183,7 +233,7 @@
     <p>
     	<label>Fecha: </label> <input type="date" name="fecha" id="fecha" placeholder="¿Cuando desa visitarse?" >
     </p>
-    <input type="button" onclick="submit()" value="submit contact"/>
+    <input type="button" onclick="envia()" value="submit contact"/>
     </form>
     </div>
 
@@ -202,56 +252,7 @@
         </div>
     </div>
 </div>
-<script>
-$('form').submit(function() {
-	
-	$.ajax({
-		type:'POST',
-		data:{
-			nombre: $('#nombre').val(),
-			email: $('#email').val(),
-			centro: $('#centro').val(),
-			fecha: $('#fecha').val()
-		},
-		url:"http://www.clinicasguanganmen.es/m/solicita-cita.php",
-		success: function(data) {
-			alert("Olee");
-		},
-		error: function(data) {
-			alert("Vaya :(");
-		}
-	});
-});
 
-/*	
-	$.post('http://www.clinicasguanganmen.es/m/solicita-cita.php', {
-	
-		// These are the names of the form values
-	
-		nombre: $('#nombre').val(),
-		email: $('#email').val(),
-		centro: $('#centro').val(),
-		fecha: $('#fecha').val()
-	
-		// HTML function
-	
-		}, function (html) {
-			// Place the HTML in a astring
-			var response=html;
-	
-			// PHP was done and email sent
-			if (response=="Success") {
-				alert("Solicitud enviada!"); 
-			} else {
-	
-				// Error postback
-				alert("Disculpa, es necesario rellenar todos los campos!"); 
-			return false;
-		}
-	});
-});
-*/
-</script>
 </body>
 </html>
 
