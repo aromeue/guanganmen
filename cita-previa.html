@@ -38,6 +38,33 @@
 <script type="text/javascript" src="scripts/framework.js"></script>
 <script type="text/javascript" src="scripts/framework.launcher.js"></script>
 
+<script>
+$.post('http://www.clinicasguanganmen.es/m/solicita-cita.php', {
+
+    // These are the names of the form values
+
+    nombre: $('#nombre').val(),
+    email: $('#email').val(),
+    centro: $('#centro').val(),
+    fecha: $('#fecha').val()
+
+    // HTML function
+
+    }, function (html) {
+        // Place the HTML in a astring
+        var response=html;
+
+        // PHP was done and email sent
+        if (response=="success") {
+            alert("Solicitud enviada!"); 
+        } else {
+
+            // Error postback
+            alert("Disculpa, es necesario rellenar todos los campos!"); 
+        return false;
+    }
+});
+</script>
 
 </head>
 <body>
@@ -157,15 +184,16 @@
     <div class="decoration"></div>
     
     <div class="container">
+    <form method="post" method="get" action="http://www.clinicasguanganmen.es/m/solicita-cita.php" >
     <p>
     	<label>Nombre: </label> <input type="text" name="nombre" id="nombre" placeholder="Indiquenos su nombre" >
     </p>
     <p>
-    	<label>Email: </label> <input type="email" name="nombre" id="nombre" placeholder="Indiquenos su nombre" >
+    	<label>Email: </label> <input type="email" name="email" id="email" placeholder="Indiquenos su e-mail" >
     </p>
     <p>
     	<label>Centro: </label> 
-        <select>
+        <select name="centro" id="centro">
         	<option value="MadridSH">Madrid (San Hermenegildo)</option>
             <option value="MadridJJ">Madrid (Jorje Juan)</option>
             <option value="Barcelona">Barcelona</option>
@@ -179,8 +207,10 @@
         </select>
     </p>
     <p>
-    	<label>Fecha: </label> <input type="text" name="nombre" id="nombre" placeholder="Indiquenos su nombre" >
+    	<label>Fecha: </label> <input type="date" name="fecha" id="fecha" placeholder="¿Cuando desa visitarse?" >
     </p>
+    <input type="button" onclick="submit()" value="submit contact"/>
+    </form>
     </div>
 
 	<div class="decoration"></div>
