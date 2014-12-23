@@ -74,7 +74,7 @@
 	<plugin name="PushNotification" value="com.pushwoosh.plugin.pushnotifications.PushNotifications" onload="true"/>
     <access origin="https://cp.pushwoosh.com" subdomains="true" />
 	
-	<gap:plugin name="com.badrit.macaddress" version="0.1.0" />
+	<gap:plugin name="com.badrit.macaddress" version="0.1.0" source="plugins.cordova.io" />
 	
 <!-- 
 	<feature name="Camera">
@@ -85,7 +85,7 @@
 -->
 	
 	<feature name="http://api.phonegap.com/1.0/device" />
-	<feature name="http://api.phonegap.com/1.0/network"/>
+	<feature name="http://api.phonegap.com/1.0/network" />
 	
 	
 

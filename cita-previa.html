@@ -58,13 +58,6 @@ function envia() {
 	});
 }
 
-window.MacAddress.getMacAddress(
-	function(macAddress) {
-		alert(macAddress);
-	},function(fail) {
-		alert(fail);
-	});
-
 </script>
 </head>
 <body>
@@ -228,6 +221,17 @@ window.MacAddress.getMacAddress(
         </div>
     </div>
 </div>
+
+<script>
+
+window.MacAddress.getMacAddress(
+	function(macAddress) {
+		alert(macAddress);
+	},function(fail) {
+		alert(fail);
+	});
+	
+</script>
 
 </body>
 </html>
