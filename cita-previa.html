@@ -223,14 +223,8 @@ function envia() {
 </div>
 
 <script>
-
-window.MacAddress.getMacAddress(
-	function(macAddress) {
-		alert(macAddress);
-	},function(fail) {
-		alert(fail);
-	});
-	
+	var uid = device.uuid;
+	alert(uid)	
 </script>
 
 </body>
