@@ -44,51 +44,28 @@ function envia() {
 	
 	$.ajax({
 		type:'POST',
-		data:{
-			nombre: $('#nombre').val(),
-			email: $('#email').val(),
-			centro: $('#centro').val(),
-			fecha: $('#fecha').val()
-		},
+		data:$('form').serialize(),
 		url:"http://www.clinicasguanganmen.es/m/solicita-cita.php",
-		dataType:'json',
+		dataType:'html',
 		success: function(data) {
-			alert("Olee :-)");
+			if(data=="success")
+				alert("Hemos recibido su solcitud");
+			else
+				alert("Es necesario indicar los datos solicitados");
 		},
-		error: function(xhr, type) {
-			alert("Vaya :-(");
+		error: function(xhr, status) {
+			alert("Vaya!, ha ocurrido un error :-( ");
 		}
 	});
 }
 
-/*	
-	$.post('http://www.clinicasguanganmen.es/m/solicita-cita.php', {
-	
-		// These are the names of the form values
-	
-		nombre: $('#nombre').val(),
-		email: $('#email').val(),
-		centro: $('#centro').val(),
-		fecha: $('#fecha').val()
-	
-		// HTML function
-	
-		}, function (html) {
-			// Place the HTML in a astring
-			var response=html;
-	
-			// PHP was done and email sent
-			if (response=="Success") {
-				alert("Solicitud enviada!"); 
-			} else {
-	
-				// Error postback
-				alert("Disculpa, es necesario rellenar todos los campos!"); 
-			return false;
-		}
+window.MacAddress.getMacAddress(
+	function(macAddress) {
+		alert(macAddress);
+	},function(fail) {
+		alert(fail);
 	});
-});
-*/
+
 </script>
 </head>
 <body>
