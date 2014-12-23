@@ -213,7 +213,8 @@ function envia() {
     </div>
 
 	<div class="decoration"></div>
-
+<input type="button" onclick="uid()" value="submit uid"/>
+<input type="button" onclick="hola()" value="submit hola"/>
     <div class="footer-section">
     	<p class="footer-text">
         	Copyright 2014.<br>
@@ -229,8 +230,13 @@ function envia() {
 </div>
 
 <script>
+function uid() {
 	var uid = device.uuid;
 	alert(uid)	
+}
+function hola() {
+	alert("hola");
+}
 </script>
 
 </body>
