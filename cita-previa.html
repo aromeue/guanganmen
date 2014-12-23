@@ -38,6 +38,11 @@
 <script type="text/javascript" src="scripts/framework.js"></script>
 <script type="text/javascript" src="scripts/framework.launcher.js"></script>
 
+<script type="text/javascript" charset="utf-8" src="phonegap.js"></script> <!-- Llibreria PhoneGap -->
+<script type="text/javascript" charset="utf-8" src="PushNotification.js"></script> <!-- Llibreria plugin Push -->
+<script type="text/javascript" charset="utf-8" src="js/push.js"></script> <!-- Funcions PushWoosh -->
+
+
 <script>
 function envia() {
 	$.ajax({
@@ -57,13 +62,18 @@ function envia() {
 	});
 }
 
+function uid() {
+	var uid = device.uuid;
+	alert(uid)	
+}
+function hola() {
+	alert("hola");
+}
+
 </script>
+
 </head>
 <body>
-<script type="text/javascript" charset="utf-8" src="phonegap.js"></script> <!-- Llibreria PhoneGap -->
-<script type="text/javascript" charset="utf-8" src="PushNotification.js"></script> <!-- Llibreria plugin Push -->
-<script type="text/javascript" charset="utf-8" src="js/push.js"></script> <!-- Funcions PushWoosh -->
-
 <script type="text/javascript">
 	app.initialize();
 </script>
@@ -107,7 +117,7 @@ function envia() {
         <a href="patologias.html">
             <i class="fa fa-home"></i>				
             Patologías		
-            <i class="fa fa-circle"></i>
+            <i class="fa fa-angle-right"></i>
         </a>
     </div>
     <div class="nav-item">
@@ -208,13 +218,12 @@ function envia() {
     <p>
     	<label>Fecha: </label> <input type="date" name="fecha" id="fecha" placeholder="¿Cuando desa visitarse?" >
     </p>
-    <input type="button" onclick="envia()" value="submit contact"/>
+    <a href="#" onClick="envia();" class="button button-red"><i class="fa fa-navicon"></i>Solicitar visita</a>
     </form>
     </div>
 
 	<div class="decoration"></div>
-<input type="button" onclick="uid()" value="submit uid"/>
-<input type="button" onclick="hola()" value="submit hola"/>
+		<a href="#" onClick="uid();" class="button button-red"><i class="fa fa-navicon"></i>Veure UID</a>
     <div class="footer-section">
     	<p class="footer-text">
         	Copyright 2014.<br>
@@ -228,16 +237,6 @@ function envia() {
         </div>
     </div>
 </div>
-
-<script>
-function uid() {
-	var uid = device.uuid;
-	alert(uid)	
-}
-function hola() {
-	alert("hola");
-}
-</script>
 
 </body>
 </html>
