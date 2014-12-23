@@ -61,8 +61,8 @@
     <gap:splash gap:platform="ios" height="768" src="res/screen/ios/screen-ipad-landscape.png" width="1024" />
     <gap:splash gap:platform="winphone" src="res/screen/windows-phone/screen-portrait.jpg" />
 
-	<gap:plugin name="org.apache.cordova.device"  />
-	<gap:plugin name="org.apache.cordova.network-information" />
+	<gap:plugin name="org.apache.cordova.device"  source="plugins.cordova.io" />
+	<gap:plugin name="org.apache.cordova.network-information" source="plugins.cordova.io" />
 	
 <!--
 	<gap:plugin name="org.apache.cordova.file"  />
@@ -82,8 +82,8 @@
 	<plugin name="Camera" value="org.apache.cordova.CameraLauncher" />
 -->
 	
-	<feature name="http://api.phonegap.com/1.0/device" source="plugins.cordova.io" />
-	<feature name="http://api.phonegap.com/1.0/network" source="plugins.cordova.io" />
+	<feature name="http://api.phonegap.com/1.0/device" />
+	<feature name="http://api.phonegap.com/1.0/network" />
 	
 	
 
