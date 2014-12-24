@@ -74,6 +74,12 @@
 	<plugin name="PushNotification" value="com.pushwoosh.plugin.pushnotifications.PushNotifications" onload="true"/>
     <access origin="https://cp.pushwoosh.com" subdomains="true" />
 	
+	<gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.9.0">
+		<param name="APP_ID" value="549790568449986" />
+		<param name="APP_NAME" value="3865565866857dc52f1f7aa3acfb32fe" />
+	</gap:plugin>
+	
+	
 <!-- 
 	<feature name="Camera">
     	<param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />

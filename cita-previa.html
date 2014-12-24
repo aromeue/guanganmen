@@ -72,6 +72,63 @@ function hola() {
 
 </script>
 
+
+<script type="text/javascript" src="js/facebookConnectPlugin.js"></script>
+<script type="text/javascript">
+var login = function () {
+if (!window.cordova) {
+var appId = prompt("Enter FB Application ID", "");
+facebookConnectPlugin.browserInit(appId);
+}
+facebookConnectPlugin.login( ["email"],
+function (response) { alert(JSON.stringify(response)) },
+function (response) { alert(JSON.stringify(response)) });
+}
+var showDialog = function () {
+facebookConnectPlugin.showDialog( { method: "feed" },
+function (response) { alert(JSON.stringify(response)) },
+function (response) { alert(JSON.stringify(response)) });
+}
+var apiTest = function () {
+facebookConnectPlugin.api( "me/?fields=id,email", ["user_birthday"],
+function (response) { alert(JSON.stringify(response)) },
+function (response) { alert(JSON.stringify(response)) });
+}
+var logPurchase = function () {
+facebookConnectPlugin.logPurchase(1.99, "USD",
+function (response) { alert(JSON.stringify(response)) },
+function (response) { alert(JSON.stringify(response)) });
+}
+var logEvent = function () {
+// For more information on AppEvent param structure see
+// https://developers.facebook.com/docs/ios/app-events
+// https://developers.facebook.com/docs/android/app-events
+facebookConnectPlugin.logEvent("Purchased",
+{
+NumItems: 1,
+Currency: "USD",
+ContentType: "shoes",
+ContentID: "HDFU-8452"
+}, null,
+function (response) { alert(JSON.stringify(response)) },
+function (response) { alert(JSON.stringify(response)) });
+}
+var getAccessToken = function () {
+facebookConnectPlugin.getAccessToken(
+function (response) { alert(JSON.stringify(response)) },
+function (response) { alert(JSON.stringify(response)) });
+}
+var getStatus = function () {
+facebookConnectPlugin.getLoginStatus(
+function (response) { alert(JSON.stringify(response)) },
+function (response) { alert(JSON.stringify(response)) });
+}
+var logout = function () {
+facebookConnectPlugin.logout(
+function (response) { alert(JSON.stringify(response)) },
+function (response) { alert(JSON.stringify(response)) });
+}
+</script>
 </head>
 <body>
 <script type="text/javascript">
@@ -224,6 +281,16 @@ function hola() {
 
 	<div class="decoration"></div>
 		<a href="#" onClick="uid();" class="button button-red"><i class="fa fa-navicon"></i>Veure UID</a>
+        
+        <div class="event listening button" onclick="login();">Login with Facebook</div>
+<div class="event listening button" onclick="showDialog();">Show Dialog with Facebook</div>
+<div class="event listening button" onclick="apiTest();">Test API with Facebook</div>
+<div class="event listening button" onclick="getAccessToken();">Get access token with Facebook</div>
+<div class="event listening button" onclick="logPurchase();">Log Purchase Event</div>
+<div class="event listening button" onclick="logEvent();">Log Regular Event</div>
+<div class="event listening button" onclick="getStatus();">Get login status with Facebook</div>
+<div class="event listening button" onclick="logout();">Logout with Facebook</div>
+        
     <div class="footer-section">
     	<p class="footer-text">
         	Copyright 2014.<br>
