@@ -79,6 +79,8 @@
 		<param name="APP_NAME" value="3865565866857dc52f1f7aa3acfb32fe" />
 	</gap:plugin>
 	
+	<gap:plugin name="com.ccsoft.plugin.CordovaFacebook" />
+	
 	
 <!-- 
 	<feature name="Camera">
