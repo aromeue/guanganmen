@@ -263,37 +263,38 @@ alert("session: " + JSON.stringify(FB.getSession()));
 }
 */
 function getLoginStatus() {
-FB.getLoginStatus(function(response) {
-if (response.status == 'connected') {
-alert('logged in');
-} else {
-alert('not logged in');
+	FB.getLoginStatus(function(response) {
+		if (response.status == 'connected') {
+		alert('logged in');
+		} else {
+		alert('not logged in');
+		}
+	});
 }
-});
-}
+
 var friendIDs = [];
 var fdata;
 function me() {
-FB.api('/me/friends', { fields: 'id, name, picture' }, function(response) {
-if (response.error) {
-alert(JSON.stringify(response.error));
-} else {
-var data = document.getElementById('data');
-fdata=response.data;
-console.log("fdata: "+fdata);
-response.data.forEach(function(item) {
-var d = document.createElement('div');
-d.innerHTML = "<img src="+item.picture+"/>"+item.name;
-data.appendChild(d);
-});
+	FB.api('/me/friends', { fields: 'id, name, picture' }, function(response) {
+	if (response.error) {
+		alert(JSON.stringify(response.error));
+	} else {
+		var data = document.getElementById('data');
+		fdata=response.data;
+		console.log("fdata: "+fdata);
+		response.data.forEach(function(item) {
+		var d = document.createElement('div');
+		d.innerHTML = "<img src="+item.picture+"/>"+item.name;
+		data.appendChild(d);
+	});
 }
 var friends = response.data;
 console.log(friends.length);
 for (var k = 0; k < friends.length && k < 200; k++) {
-var friend = friends[k];
-var index = 1;
-friendIDs[k] = friend.id;
-//friendsInfo[k] = friend;
+	var friend = friends[k];
+	var index = 1;
+	friendIDs[k] = friend.id;
+	//friendsInfo[k] = friend;
 }
 console.log("friendId's: "+friendIDs);
 });
@@ -351,7 +352,7 @@ FB.ui(params, function(obj) { console.log(obj);});
 document.addEventListener('deviceready', function() {
 try {
 alert('Device is ready! Make sure you set your app_id below this alert.');
-FB.init({ appId: "appid", nativeInterface: CDV.FB, useCachedDialogs: false });
+FB.init({ appId: "549790568449986", nativeInterface: CDV.FB, useCachedDialogs: false });
 document.getElementById('data').innerHTML = "";
 } catch (e) {
 alert(e);
