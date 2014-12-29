@@ -299,23 +299,26 @@ for (var k = 0; k < friends.length && k < 200; k++) {
 console.log("friendId's: "+friendIDs);
 });
 }
+
 function logout() {
-FB.logout(function(response) {
-alert('logged out');
-});
+	FB.logout(function(response) {
+		alert('logged out');
+	});
 }
+
 function login() {
-FB.login(
-function(response) {
-if (response.session) {
-alert('logged in');
-} else {
-alert('not logged in');
+	FB.login(
+		function(response) {
+			if (response.session) {
+				alert('logged in');
+			} else {
+				alert('not logged in');
+			}
+		},
+		{ scope: "email" }
+	);
 }
-},
-{ scope: "email" }
-);
-}
+	
 function facebookWallPost() {
 console.log('Debug 1');
 var params = {
@@ -350,15 +353,30 @@ FB.ui(params, function(obj) { console.log(obj);});
 }
 }
 document.addEventListener('deviceready', function() {
-try {
-alert('Device is ready! Make sure you set your app_id below this alert.');
-FB.init({ appId: "549790568449986", nativeInterface: CDV.FB, useCachedDialogs: false });
-document.getElementById('data').innerHTML = "";
-} catch (e) {
-alert(e);
-}
+	try {
+		alert('Device is ready! Make sure you set your app_id below this alert.');
+		FB.init({ appId: "549790568449986", nativeInterface: CDV.FB, useCachedDialogs: false });
+		document.getElementById('data').innerHTML = "";
+	} catch (e) {
+		alert(e);
+	}
 }, false);
 </script>
+ <script>
+// Initialize the Facebook SDK
+document.addEventListener('deviceready', function() {
+	alert("hola");
+FB.init({
+appId: '549790568449986',
+nativeInterface: CDV.FB,
+useCachedDialogs: false
+});
+FB.getLoginStatus(handleStatusChange);
+authUser();
+updateAuthElements();
+});
+</script>
+
 <div id="log"></div>
 
 
