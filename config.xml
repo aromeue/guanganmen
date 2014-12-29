@@ -76,10 +76,8 @@
 	
 	<gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.9.0">
 		<param name="APP_ID" value="549790568449986" />
-		<param name="APP_NAME" value="3865565866857dc52f1f7aa3acfb32fe" />
+		<param name="APP_NAME" value="OfferDelta" />
 	</gap:plugin>
-	
-	<gap:plugin name="com.ccsoft.plugin.CordovaFacebook" />
 	
 	
 <!-- 
