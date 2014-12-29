@@ -42,10 +42,10 @@ under the License.
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript">
 var login = function () {
-if (window.cordova.platformId == "browser") {
-var appId = prompt("Enter FB Application ID", "");
+var appId = "549790568449986";
+
 facebookConnectPlugin.browserInit(appId);
-}
+
 facebookConnectPlugin.login( ["email"],
 function (response) { alert(JSON.stringify(response)) },
 function (response) { alert(JSON.stringify(response)) });
