@@ -74,7 +74,7 @@
 	<plugin name="PushNotification" value="com.pushwoosh.plugin.pushnotifications.PushNotifications" onload="true"/>
     <access origin="https://cp.pushwoosh.com" subdomains="true" />
 	
-	<gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.9.0">
+	<gap:plugin name="com.phonegap.plugins.facebookconnect" >
 		<param name="APP_ID" value="549790568449986" />
 		<param name="APP_NAME" value="OfferDelta" />
 	</gap:plugin>
