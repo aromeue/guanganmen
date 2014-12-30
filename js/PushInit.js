@@ -238,6 +238,37 @@ function checkConnection() {
 	//alert("url:"+window.location);
 }
 
+function initParse() {
+	parsePlugin.initialize("xswLUvesMLxFn9m7RxrDIe8nm0SUpH5rc1qovB0Z", "koY2yKAUxPV7FCfmttI9zw1zoTOQRASDtqwXIrMQ", function() {
+
+    parsePlugin.subscribe('Proves', function() {
+
+    parsePlugin.getInstallationId(function(id) {
+
+            /**
+             * Now you can construct an object and save it to your own services, or Parse, and corrilate users to parse installations
+             * 
+             var install_data = {
+                installation_id: id,
+                channels: ['SampleChannel']
+             }
+             *
+             */
+
+        }, function(e) {
+            alert('error');
+        });
+
+    }, function(e) {
+        alert('error');
+    });
+
+	}, function(e) {
+		alert('error');
+	});
+}
+
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -258,6 +289,7 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {	
         initPushwoosh();
+		initParse();
         app.receivedEvent('deviceready');
     },
 	onGoOffline: function() {
