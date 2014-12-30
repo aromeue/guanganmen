@@ -50,7 +50,7 @@
 
 <script>
 function onLoad() {
-	/* document.addEventListener("deviceready", initPushwoosh, true); */
+	app.initialize();
 }
 </script>
 
@@ -58,12 +58,6 @@ function onLoad() {
 
 </head>
 <body class="landing-page" onLoad="onLoad();">
-<script type="text/javascript" charset="utf-8" src="PushNotification.js"></script> <!-- Llibreria plugin PushWoosh -->
-<script type="text/javascript" charset="utf-8" src="js/PushInit.js"></script> <!-- Funcions Inicialitza PushWoosh -->
-
-<script type="text/javascript">
-	app.initialize();
-</script>
 
 <div id="preloader">
 	<div id="status">

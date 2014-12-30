@@ -92,7 +92,7 @@ function registerPushwooshAndroid() {
 				pushNotification.registerDevice(
 					function(token) {
 						//Alert amb el token de registre. Desactivat pq si no surt cada inici
-						//alert("Registre: "+token); //Mostrar alert en lo token de registre
+						alert("Registre: "+token); //Mostrar alert en lo token de registre
 						//callback when pushwoosh is ready
 						onPushwooshAndroidInitialized(token);
 					},
@@ -135,7 +135,7 @@ function onPushwooshAndroidInitialized(pushToken)
 
 	//set multi notificaiton mode
 	//pushNotification.setMultiNotificationMode();
-	//pushNotification.setEnableLED(true);
+	pushNotification.setEnableLED(true);
 	
 	//set single notification mode
 	//pushNotification.setSingleNotificationMode();
