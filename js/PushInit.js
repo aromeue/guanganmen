@@ -87,7 +87,7 @@ function registerPushwooshAndroid() {
 			  });
 
 				//projectid: "GOOGLE_PROJECT_ID", appid : "PUSHWOOSH_APP_ID"
-				pushNotification.registerDevice({ projectid: "675581025503", appid : "E9024-6EF1C" },
+				pushNotification.registerDevice({ projectid: "675581025503", appid: "E9024-6EF1C" },
 					function(token) {
 						alert("Registre: "+token); //Mostrar alert en lo token de registre
 						//callback when pushwoosh is ready
@@ -247,12 +247,6 @@ var app = {
 		document.addEventListener("offline", this.onGoOffline, false);
 		document.addEventListener("online", this.onGoOffline, false);
         document.addEventListener('deviceready', this.onDeviceReady, false);
-		document.addEventListener("deviceready", initPushwoosh, true);
-		document.addEventListener('push-notification', function(event) { 
-			var title = event.notification.title;
-        	var userData = event.notification.userdata;
-			alert("hola:-->"+title);
-		}, true);
     },
     // deviceready Event Handler
     //
