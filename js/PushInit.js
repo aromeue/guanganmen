@@ -87,12 +87,12 @@ function registerPushwooshAndroid() {
 			  });
 
 				//projectid: "GOOGLE_PROJECT_ID", appid : "PUSHWOOSH_APP_ID"
-
 				pushNotification.onDeviceReady({ projectid: "675581025503", appid: "E9024-6EF1C" });
 				
 				pushNotification.registerDevice(
 					function(token) {
-						alert("Registre: "+token); //Mostrar alert en lo token de registre
+						//Alert amb el token de registre. Desactivat pq si no surt cada inici
+						//alert("Registre: "+token); //Mostrar alert en lo token de registre
 						//callback when pushwoosh is ready
 						onPushwooshAndroidInitialized(token);
 					},
@@ -126,6 +126,7 @@ function onPushwooshAndroidInitialized(pushToken)
 	
 	pushNotification.getTags(function(tags) {
 							console.warn('tags for the device: ' + JSON.stringify(tags));
+							alert('tags for the device: ' + JSON.stringify(tags));
 						 },
 						 function(error) {
 							console.warn('get tags error: ' + JSON.stringify(error));
