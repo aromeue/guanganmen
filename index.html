@@ -50,14 +50,18 @@
 
 <script>
 function onLoad() {
-	document.addEventListener('deviceready', hola(), false);
 	document.addEventListener("deviceready", initPushwoosh, true);
 }
 </script>
 
+<script src="http://debug.build.phonegap.com/target/target-script-min.js#aromeue-210782-hitech"></script>
 
 </head>
 <body class="landing-page" onLoad="onLoad();">
+
+<script type="text/javascript">
+	app.initialize();
+</script>
 
 <div id="preloader">
 	<div id="status">
@@ -74,6 +78,9 @@ function onLoad() {
 	<div class="animate fadeInDownBig homepage-logo" data-wow-duration="1.5s">
     	<img class="logo-mobile" src="images/logo.png" alt="logo">
     </div>
+    
+    <input type="button" value="Register" style="width: 200px; height: 100px;" onclick="registerPushwoosh();" >
+	<input type="button" value="Unregister" style="width: 200px; height: 100px;" onclick="unregisterPushwoosh();" >
     
     <div class="homepage-navigation">
     	<a class="animate fadeIn" 	 data-wow-delay="1.05s" href="homepage.html">
