@@ -39,8 +39,25 @@
 <script type="text/javascript" src="scripts/framework.launcher.js"></script>
 
 
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script> <!-- Llibreria Cordova/Phonegap -->
+<script type="text/javascript" charset="utf-8" src="cordova_plugins.js"></script> <!-- Llibreria Plugins -->
+
+<script type="text/javascript" charset="utf-8" src="js/PushNotification.js"></script> <!-- Llibreria plugin PushWoosh -->
+<script type="text/javascript" charset="utf-8" src="js/PushInit.js"></script> <!-- Funcions Inicialitza PushWoosh -->
+
+<script src="js/cdv-plugin-fb-connect.js"></script>   <!--  Llibreria Facebook  -->
+<script src="js/facebook_js_sdk.js"></script>   <!--  Llibreria Facebook  -->
+
+<script>
+function onLoad() {
+	document.addEventListener('deviceready', hola(), false);
+	document.addEventListener("deviceready", initPushwoosh, true);
+}
+</script>
+
+
 </head>
-<body class="landing-page">
+<body class="landing-page" onLoad="onLoad();">
 
 <div id="preloader">
 	<div id="status">
