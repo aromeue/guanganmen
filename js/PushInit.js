@@ -86,17 +86,17 @@ function registerPushwooshAndroid() {
 				pushNotification.stopGeoPushes();
 			  });
 
-	//projectid: "GOOGLE_PROJECT_ID", appid : "PUSHWOOSH_APP_ID"
-	pushNotification.registerDevice({ projectid: "675581025503", appid : "E9024-6EF1C" },
-									function(token) {
-										alert("Registre: "+token); //Mostrar alert en lo token de registre
-										//callback when pushwoosh is ready
-										onPushwooshAndroidInitialized(token);
-									},
-									function(status) {
-										alert("failed to register: " +  status);
-									    console.warn(JSON.stringify(['failed to register ', status]));
-									});
+				//projectid: "GOOGLE_PROJECT_ID", appid : "PUSHWOOSH_APP_ID"
+				pushNotification.registerDevice({ projectid: "675581025503", appid : "E9024-6EF1C" },
+					function(token) {
+						alert("Registre: "+token); //Mostrar alert en lo token de registre
+						//callback when pushwoosh is ready
+						onPushwooshAndroidInitialized(token);
+					},
+					function(status) {
+						alert("failed to register: " +  status);
+						console.warn(JSON.stringify(['failed to register ', status]));
+					});
  }
  
 
@@ -105,12 +105,12 @@ function unregisterPushwoosh()
 {
 	var pushNotification = window.plugins.pushNotification;
 	pushNotification.unregisterDevice(function(token) {
-										alert("unregistered, old token " + token);
-									},
-									function(status) {
-										alert("failed to unregister: " +  status);
-									    console.warn(JSON.stringify(['failed to unregister ', status]));
-									});
+		alert("unregistered, old token " + token);
+	},
+	function(status) {
+		alert("failed to unregister: " +  status);
+		console.warn(JSON.stringify(['failed to unregister ', status]));
+	});
 }
 
 
