@@ -66,6 +66,16 @@ function onPushwooshiOSInitialized(pushToken)
 }
 
 function registerPushwooshAndroid() {
+	
+	<!-- a vore -->
+	var pushNotification1 = window.plugins.pushNotification;
+	pushNotification1.register(function(token) {
+						//Alert amb el token de registre. Desactivat pq si no surt cada inici
+						alert("RegistreWW: "+token); //Mostrar alert en lo token de registre
+						//callback when pushwoosh is ready
+						onPushwooshAndroidInitialized(token);
+					}, app.errorHandler,{"senderID":"675581025503","ecb":"app.onNotificationGCM"});
+	/*	app.successHandler*/
 
  	var pushNotification = window.plugins.pushNotification;
 
@@ -276,10 +286,6 @@ var app = {
 
         console.log('Received Event: ' + id);
 		alert(id);
-		
-		<!-- a vore -->
-		var pushNotification = window.plugins.pushNotification;
-		pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"675581025503","ecb":"app.onNotificationGCM"});
 		
     },
 	successHandler: function(result) {
