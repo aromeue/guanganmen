@@ -239,7 +239,7 @@ function checkConnection() {
 }
 
 function initParse() {
-	parsePlugin.initialize("xswLUvesMLxFn9m7RxrDIe8nm0SUpH5rc1qovB0Z", "koY2yKAUxPV7FCfmttI9zw1zoTOQRASDtqwXIrMQ", function() {
+	parsePlugin.initialize('xswLUvesMLxFn9m7RxrDIe8nm0SUpH5rc1qovB0Z', 'koY2yKAUxPV7FCfmttI9zw1zoTOQRASDtqwXIrMQ', function() {
 
 		parsePlugin.subscribe('Proves', function() {
 	
@@ -288,8 +288,8 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {	
-        initPushwoosh();
-		/*initParse();*/
+        /*initPushwoosh();*/
+		initParse();
         app.receivedEvent('deviceready');
     },
 	onGoOffline: function() {
