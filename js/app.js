@@ -4,6 +4,10 @@ var parseJSID = "KkXlX1iXMlkLFTyR5VpmyDerIde4kFbuwRRSYdlb";
 //Initialize Parse
     Parse.initialize(parseAPPID, parseJSID);
     
+	var inst = Parse.getCurrentInstallation();
+	
+	alert(inst);
+	
     var TestObject = Parse.Object.extend("TestObject");
     var testObject = new TestObject();
       testObject.save({foo: "bar"}, {
