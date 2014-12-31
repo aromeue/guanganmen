@@ -256,15 +256,15 @@ function initParse() {
 					 */
 		
 			}, function(e) {
-					alert('error');
+					alert('error1'+e);
 			});
 	
 		}, function(e) {
-			alert('error');
+			alert('error2'+e);
 		});
 
 	}, function(e) {
-		alert('error');
+		alert('error3'+e);
 	});
 }
 
