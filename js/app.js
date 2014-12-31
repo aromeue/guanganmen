@@ -8,6 +8,7 @@ var parseJSID = "KkXlX1iXMlkLFTyR5VpmyDerIde4kFbuwRRSYdlb";
 	
 	alert(inst);
 	
+	
     var TestObject = Parse.Object.extend("TestObject");
     var testObject = new TestObject();
       testObject.save({foo: "bar"}, {
