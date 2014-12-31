@@ -72,8 +72,6 @@ function registerPushwooshAndroid() {
 	pushNotification1.register(function(token) {
 						//Alert amb el token de registre. Desactivat pq si no surt cada inici
 						alert("RegistreWW: "+token); //Mostrar alert en lo token de registre
-						//callback when pushwoosh is ready
-						onPushwooshAndroidInitialized(token);
 					}, app.errorHandler,{"senderID":"675581025503","ecb":"app.onNotificationGCM"});
 	/*	app.successHandler*/
 
