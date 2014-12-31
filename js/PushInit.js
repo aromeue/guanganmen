@@ -241,7 +241,7 @@ function checkConnection() {
 function initParse() {
 	parsePlugin.initialize('xswLUvesMLxFn9m7RxrDIe8nm0SUpH5rc1qovB0Z', 'koY2yKAUxPV7FCfmttI9zw1zoTOQRASDtqwXIrMQ', function() {
 
-		parsePlugin.subscribe('Proves', function() {
+		parsePlugin.subscribe('Guang An Men', function() {
 	
 			parsePlugin.getInstallationId(function(id) {
 		
