@@ -66,14 +66,6 @@ function onPushwooshiOSInitialized(pushToken)
 }
 
 function registerPushwooshAndroid() {
-	
-	<!-- a vore -->
-	var pushNotification1 = window.plugins.pushNotification;
-	pushNotification1.register(function(token) {
-						//Alert amb el token de registre. Desactivat pq si no surt cada inici
-						alert("RegistreWW: "+token); //Mostrar alert en lo token de registre
-					}, app.errorHandler,{"senderID":"675581025503","ecb":"app.onNotificationGCM"});
-	/*	app.successHandler*/
 
  	var pushNotification = window.plugins.pushNotification;
 
@@ -246,6 +238,42 @@ function checkConnection() {
 	//alert("url:"+window.location);
 }
 
+function initPush() {
+	$("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
+	if ( device.platform == 'android' || device.platform == 'Android' || device.platform == "amazon-fireos" ){
+		pushNotification.register(
+		successHandler,
+		errorHandler,
+		{
+			"senderID":"675581025503",
+			"ecb":"onNotification"
+		});
+	} else if ( device.platform == 'blackberry10'){
+		pushNotification.register(
+		successHandler,
+		errorHandler,
+		{
+			invokeTargetId : "replace_with_invoke_target_id",
+			appId: "replace_with_app_id",
+			ppgUrl:"replace_with_ppg_url", //remove for BES pushes
+			ecb: "pushNotificationHandler",
+			simChangeCallback: replace_with_simChange_callback,
+			pushTransportReadyCallback: replace_with_pushTransportReady_callback,
+			launchApplicationOnPush: true
+		});
+	} else {
+		pushNotification.register(
+		tokenHandler,
+		errorHandler,
+		{
+			"badge":"true",
+			"sound":"true",
+			"alert":"true",
+			"ecb":"onNotificationAPN"
+		});
+	}
+}
+
 
 var app = {
     // Application Constructor
@@ -266,7 +294,8 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {	
-        initPushwoosh();
+        /*initPushwoosh();*/
+		initPush();
         app.receivedEvent('deviceready');
     },
 	onGoOffline: function() {
@@ -284,6 +313,12 @@ var app = {
 
         console.log('Received Event: ' + id);
 		alert(id);
+		
+		<!-- a vore -->
+		var pushNotification = window.plugins.pushNotification;
+		pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"675581025503","ecb":"app.onNotificationGCM"});
+		
+		
 		
     },
 	successHandler: function(result) {
