@@ -2,27 +2,16 @@ var parseAPPID = "xswLUvesMLxFn9m7RxrDIe8nm0SUpH5rc1qovB0Z";
 var parseJSID = "KkXlX1iXMlkLFTyR5VpmyDerIde4kFbuwRRSYdlb";
 
 //Initialize Parse
-Parse.initialize(parseAPPID,parseJSID);
-
-Parse.subscribe('Guang An Men', function() {
-	
-			parsePlugin.getInstallationId(function(id) {
-		
-					/**
-					 * Now you can construct an object and save it to your own services, or Parse, and corrilate users to parse installations
-					 * 
-					 var install_data = {
-						installation_id: id,
-						channels: ['SampleChannel']
-					 }
-					 *
-					 */
-		
-			}, function(e) {
-					alert('error1'+e);
-			});
-	
-		}, function(e) {
-			alert('error2'+e);
-		});
+    Parse.initialize(parseAPPID, parseJSID);
+    
+    var TestObject = Parse.Object.extend("TestObject");
+    var testObject = new TestObject();
+      testObject.save({foo: "bar"}, {
+      success: function(object) {
+        $(".success").show();
+      },
+      error: function(model, error) {
+        $(".error").show();
+      }
+    });
 
