@@ -61,7 +61,7 @@
     <gap:splash gap:platform="ios" height="768" src="res/screen/ios/screen-ipad-landscape.png" width="1024" />
     <gap:splash gap:platform="winphone" src="res/screen/windows-phone/screen-portrait.jpg" />
 
-	<gap:plugin name="org.apache.cordova.device"  source="plugins.cordova.io" />
+	<gap:plugin name="org.apache.cordova.device" source="plugins.cordova.io" />
 	<gap:plugin name="org.apache.cordova.network-information"  source="plugins.cordova.io" />
 	
 <!--
@@ -76,7 +76,7 @@
 	<plugin name="PushNotification" value="com.pushwoosh.plugin.pushnotifications.PushNotifications" onload="true"/>
     <access origin="https://cp.pushwoosh.com" subdomains="true" />
 -->	
-	<gap:plugin name="com.phonegap.plugins.facebookconnect" source="plugins.cordova.io" >
+	<gap:plugin name="com.phonegap.plugins.facebookconnect" >
 		<param name="APP_ID" value="549790568449986" />
 		<param name="APP_NAME" value="OfferDelta" />
 	</gap:plugin>
