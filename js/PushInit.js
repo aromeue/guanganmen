@@ -241,13 +241,14 @@ function checkConnection() {
 function initPush() {
 	$("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
 	if ( device.platform == 'android' || device.platform == 'Android' || device.platform == "amazon-fireos" ){
-		pushNotification.register(
+		var res = pushNotification.register(
 		successHandler,
 		errorHandler,
 		{
 			"senderID":"675581025503",
 			"ecb":"onNotification"
 		});
+		alert(res);
 	} else if ( device.platform == 'blackberry10'){
 		pushNotification.register(
 		successHandler,
@@ -361,9 +362,7 @@ var app = {
         /*initPushwoosh();*/
 		
 		var pushNotification = window.plugins.pushNotification;
-		
-		alert(pushNotification);
-		
+				
 		initPush();
         app.receivedEvent('deviceready');
     },
