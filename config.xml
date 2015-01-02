@@ -70,7 +70,7 @@
 	<gap:plugin name="org.apache.cordova.media-capture" />
 -->	
 	
-	<gap:plugin name="com.phonegap.plugins.pushplugin" />
+	<gap:plugin name="com.phonegap.plugins.pushplugin" source="plugins.cordova.io" />
 <!--	
 	<gap:plugin name="com.pushwoosh.plugins.pushwoosh" />
 	<plugin name="PushNotification" value="com.pushwoosh.plugin.pushnotifications.PushNotifications" onload="true"/>

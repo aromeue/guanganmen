@@ -242,7 +242,6 @@ function initPush() {
 	var pushNotification = window.plugins.pushNotification;
 	$("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
 	if ( device.platform == 'android' || device.platform == 'Android' || device.platform == "amazon-fireos" ){
-		alert(device.platform);
 		pushNotification.register(
 		successHandler,
 		errorHandler,
@@ -276,9 +275,11 @@ function initPush() {
 	}
 }
 function successHandler (result) {
+	$("#app-status-ul").append('<li>success</li>');
     alert('result = ' + result);
 }
 function errorHandler (error) {
+	$("#app-status-ul").append('<li>error</li>');
     alert('error = ' + error);
 }
 function onNotification(e) {
