@@ -62,6 +62,7 @@
     <gap:splash gap:platform="winphone" src="res/screen/windows-phone/screen-portrait.jpg" />
 
 	<gap:plugin name="org.apache.cordova.device" source="plugins.cordova.io" />
+	<gap:plugin name="org.apache.cordova.media" source="plugins.cordova.io" />
 	<gap:plugin name="org.apache.cordova.network-information"  source="plugins.cordova.io" />
 	
 	<gap:plugin name="com.phonegap.plugins.pushplugin" source="plugins.cordova.io" />
