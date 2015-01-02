@@ -70,6 +70,10 @@
 		<param name="APP_ID" value="549790568449986" />
 		<param name="APP_NAME" value="OfferDelta" />
 	</gap:plugin>
+	
+	<feature name="PushPlugin">
+	  <param name="android-package" value="com.plugin.gcm.PushPlugin" />
+	</feature>
 
 
 
