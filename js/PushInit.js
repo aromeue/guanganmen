@@ -241,7 +241,7 @@ function checkConnection() {
 function initPush() {
 	$("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
 	if ( device.platform == 'android' || device.platform == 'Android' || device.platform == "amazon-fireos" ){
-		pushNotification.registerDevice(
+		pushNotification.register(
 		successHandler,
 		errorHandler,
 		{
