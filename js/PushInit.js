@@ -87,7 +87,7 @@ function registerPushwooshAndroid() {
 			  });
 
 				//projectid: "GOOGLE_PROJECT_ID", appid : "PUSHWOOSH_APP_ID"
-				pushNotification.onDeviceReady({ projectid: "675581025503", appid: "E9024-6EF1C" });
+				pushNotification.onDeviceReady(/*{ projectid: "675581025503", appid: "E9024-6EF1C" }*/);
 				
 				pushNotification.registerDevice(
 					function(token) {
@@ -242,9 +242,13 @@ function initPush() {
 	$("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
 	if ( device.platform == 'android' || device.platform == 'Android' || device.platform == "amazon-fireos" ){
 		var res = pushNotification.register(
-		successHandler,
+		function vale(token) {
+			alert(token)},
 		errorHandler,
 		{
+			"badge":"true",
+		    "sound":"true",
+		    "alert":"true",
 			"senderID":"675581025503",
 			"ecb":"onNotification"
 		});
@@ -353,6 +357,8 @@ var app = {
 		document.addEventListener("offline", this.onGoOffline, false);
 		document.addEventListener("online", this.onGoOffline, false);
         document.addEventListener('deviceready', this.onDeviceReady, false);
+		document.addEventListener('onNotification', this.onNotification, false);
+		
     },
     // deviceready Event Handler
     //
