@@ -239,7 +239,6 @@ function checkConnection() {
 }
 
 function initPush() {
-	var pushNotification = window.plugins.pushNotification;
 	$("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
 	if ( device.platform == 'android' || device.platform == 'Android' || device.platform == "amazon-fireos" ){
 		pushNotification.register(
@@ -360,6 +359,11 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {	
         /*initPushwoosh();*/
+		
+		var pushNotification = window.plugins.pushNotification;
+		
+		alert(pushNotification);
+		
 		initPush();
         app.receivedEvent('deviceready');
     },
