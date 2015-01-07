@@ -49,12 +49,14 @@ function registerPush() {
 
     //$("#app-status-ul").append("<li>Registrant</li>");
     var res = pushNotification.register(
-        /*function (token) {
-            $("#app-status-ul").append("<li>Token:"+token+"</li>");
+        function (token) {
+            //$("#app-status-ul").append("<li>Token:"+token+"</li>");
+            console.log(token);
         },
         function (error) {
-            $("#app-status-ul").append("<li>Error:"+error+"</li>");
-        },*/
+            //$("#app-status-ul").append("<li>Error:"+error+"</li>");
+            console.log(error);
+        },
         {
             "senderID":"675581025503",
             "ecb":"onNotification"
