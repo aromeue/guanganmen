@@ -1,0 +1,318 @@
+<!DOCTYPE HTML>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/splash/splash-icon.png">
+<link rel="apple-touch-startup-image" href="images/splash/splash-screen.png" 			media="screen and (max-device-width: 320px)" />  
+<link rel="apple-touch-startup-image" href="images/splash/splash-screen@2x.png" 		media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" /> 
+<link rel="apple-touch-startup-image" sizes="640x1096" href="images/splash/splash-screen@3x.png" />
+<link rel="apple-touch-startup-image" sizes="1024x748" href="images/splash/splash-screen-ipad-landscape" media="screen and (min-device-width : 481px) and (max-device-width : 1024px) and (orientation : landscape)" />
+<link rel="apple-touch-startup-image" sizes="768x1004" href="images/splash/splash-screen-ipad-portrait.png" media="screen and (min-device-width : 481px) and (max-device-width : 1024px) and (orientation : portrait)" />
+<link rel="apple-touch-startup-image" sizes="1536x2008" href="images/splash/splash-screen-ipad-portrait-retina.png"   media="(device-width: 768px)	and (orientation: portrait)	and (-webkit-device-pixel-ratio: 2)"/>
+<link rel="apple-touch-startup-image" sizes="1496x2048" href="images/splash/splash-screen-ipad-landscape-retina.png"   media="(device-width: 768px)	and (orientation: landscape)	and (-webkit-device-pixel-ratio: 2)"/>
+
+<title>Clinicas Guang An Men - Contacto</title>
+
+<link href="styles/style.css"     		 rel="stylesheet" type="text/css">
+<link href="styles/framework.css" 		 rel="stylesheet" type="text/css">
+<link href="styles/owl.carousel.css" 	 rel="stylesheet" type="text/css">
+<link href="styles/owl.theme.css" 		 rel="stylesheet" type="text/css">
+<link href="styles/swipebox.css"		 rel="stylesheet" type="text/css">
+<link href="styles/colorbox.css"		 rel="stylesheet" type="text/css">
+<link href="styles/font-awesome.css"	 rel="stylesheet" type="text/css">
+<link href="styles/animate.css"			 rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/jqueryui.js"></script>
+<script type="text/javascript" src="scripts/wow.js"></script>
+<script type="text/javascript" src="scripts/owl.carousel.min.js"></script>
+<script type="text/javascript" src="scripts/jquery.swipebox.js"></script>
+<script type="text/javascript" src="scripts/colorbox.js"></script>
+<script type="text/javascript" src="scripts/snap.js"></script>
+<script type="text/javascript" src="scripts/countdown.js"></script>
+<script type="text/javascript" src="scripts/contact.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+<script type="text/javascript" src="scripts/framework.js"></script>
+<script type="text/javascript" src="scripts/framework.launcher.js"></script>
+
+<script>
+function envia() {
+	$.ajax({
+		type:'POST',
+		data:$('form').serialize(),
+		url:"http://www.clinicasguanganmen.es/m/contacto.php",
+		dataType:'html',
+		success: function(data) {
+			if(data=="success")
+				alert("Hemos recibido su solcitud");
+			else
+				alert("Es necesario indicar los datos solicitados");
+		},
+		error: function(xhr, status) {
+			alert("Vaya!, ha ocurrido un error :-( ");
+		}
+	});
+}
+
+function SelClin(clinica) {
+	var info = new Array();
+	info['Amposta'] = '<p><strong>Amposta</strong><br>C/Larache, 10 <br>43870 - Amposta</p>'
+					 +'<p><a href="#" class="contact-call"><i class="fa fa-phone"></i>Tel: 977 70 37 03</a>'
+					 +'<a href="#" class="contact-mail"><i class="fa fa-envelope"></i>Email: mtcamposta@mtc.es</a></p>';
+                 
+	info['Barcelona'] = '<p><strong>Barcelona</strong><br>Gran Vía de Carlos III , 64-66 local<br>08028 - Barcelona<br>Metro: L3 Les Corts.<br>Bus: 15, 43, 59, 70, 72, 75 y L12.</p>'
+					 +'<p><a href="#" class="contact-call"><i class="fa fa-phone"></i>Tel: 93 490 13 26</a>'
+					 +'<a href="#" class="contact-mail"><i class="fa fa-envelope"></i>Email: clinica@mtc.es</a></p>';
+					 
+	info['MadridSH'] = '<p><strong>Madrid</strong><br>San Hermenegildo 25 Local <br>28015 - Madrid<br>Metro: San Bernardo<br>Bus: M2, 3, 21 y 147</p>'
+					 +'<a href="#" class="contact-call"><i class="fa fa-phone"></i>Tel: 91 539 11 68</a>'
+					 +'<a href="#" class="contact-mail"><i class="fa fa-envelope"></i>Email: mtcmadrid@mtc.es</a></p>';
+					 
+	info['MadridJJ'] = '<p><strong>Madrid</strong><br>Jorge Juan, 141 <br>28028 - Madrid<br>Metro: O´Donnell<br>Bus: 2, 28, 30, 56, 71, 143, C2</p>'
+					 +'<a href="#" class="contact-call"><i class="fa fa-phone"></i>Tel: 91 573 72 05</a>'
+					 +'<a href="#" class="contact-mail"><i class="fa fa-envelope"></i>Email: centromadrid@mtc.es</a></p>';
+					 
+	info['Valencia'] = '<p><strong>Valencia</strong><br>Vinalopó 14-16, bajos<br />46021 - Valencia<br />Metro: Amistad y Universidad Politécnica<br />Bus:9, 29, 31, 71 y 81</p>'
+					 +'<a href="#" class="contact-call"><i class="fa fa-phone"></i>Tel: 96 356 15 48</a>'
+					 +'<a href="#" class="contact-mail"><i class="fa fa-envelope"></i>Email: mtcvalencia@mtc.es</a></p>';
+					 
+	info['MediNorte'] = '<p><strong>Valencia</strong><br>Av Marqués de Sotelo 13, 1º - 2ª<br />46002 - Valencia<br />Metro: Estación Xativa.<br />Bus: <a href="http://www.medinorte.es/contacto.html" target="_blank">Varias líneas</a><br />Cercanías: Frente Estación Norte</p>'
+					 +'<a href="#" class="contact-call"><i class="fa fa-phone"></i>Tel: 96 344 05 05 / 96 322 06 59</a>'
+					 +'<a href="#" class="contact-mail"><i class="fa fa-envelope"></i>Email: medinorte@comv.es</a></p>';
+	
+	info['Alicante'] = '<p><strong>Alicante</strong><br>Avda de Denia 78<br />03016 - Alicante<br /</p>'
+					 +'<a href="#" class="contact-call"><i class="fa fa-phone"></i>Tel: 96 516 22 00 (ext. 9091)</a>'
+					 +'<a href="#" class="contact-mail"><i class="fa fa-envelope"></i>Email: medimar@mtc.es</a></p>';
+	
+	info['StVicente'] = '<p><strong>San Vicente del Raspeig</strong><br>Ancha de Castelar, 153 - Entlo.<br />03690 - San Vicente (Alicante)<br>Bus: 24 Linea de San Vicente - Alicante.</p>'
+					 +'<a href="#" class="contact-call"><i class="fa fa-phone"></i>Tel: 96 508 33 70</a>'
+					 +'<a href="#" class="contact-mail"><i class="fa fa-envelope"></i>Email: sanvicente@mtc.es</a></p>';
+	
+	info['Elda'] = '<p><strong>Elda</strong><br>Quijote 26<br />03600 - Elda (Alicante)</p>'
+					 +'<a href="#" class="contact-call"><i class="fa fa-phone"></i>Tel: 96 684 73 10</a>'
+					 +'<a href="#" class="contact-mail"><i class="fa fa-envelope"></i>Email: elda@mtc.es</a></p>';
+	
+	info['Tarragona'] = '<p><strong>Tarragona</strong><br>Pare Palau, 7 1º 2º<br>43001 - Tarragona</p>'
+					 +'<a href="#" class="contact-call"><i class="fa fa-phone"></i>Tel: 977 22 95 22</a>'
+					 +'<a href="#" class="contact-mail"><i class="fa fa-envelope"></i>Email: mtctarragona@mtc.es</a></p>';
+
+	$("#ClinInfo").html(info[clinica]);
+}
+</script>
+
+</head>
+<body>
+
+<div id="preloader">
+	<div id="status">
+    	<p class="center-text">
+			Loading the content...
+            <em>Loading depends on your connection speed!</em>
+        </p>
+    </div>
+</div>
+
+
+<div class="header">
+    <a class="deploy-navigation going-up" href="#">
+        <i class="fa fa-navicon"></i>
+    </a>
+    <a class="header-logo" href="#"><img src="images/logo.png" alt="img"></a>
+</div>
+
+<div class="header-clear"></div>
+
+<div class="page-navigation full-bottom">
+	<div class="nav-clear"></div>
+    <div class="nav-item">
+        <a href="index.html">
+            <i class="fa fa-star"></i>				
+            Welcome		
+            <i class="fa fa-angle-right"></i>
+        </a>
+    </div>
+    <div class="nav-item">
+        <a href="homepage.html">
+            <i class="fa fa-home"></i>				
+            Homepage		
+            <i class="fa fa-angle-right"></i>
+        </a>
+    </div>
+    <div class="nav-item">
+        <a class="submenu-deploy" href="#">
+            <i class="fa fa-cog"></i>
+            Features
+            <i class="fa fa-angle-down"></i>
+        </a>
+        <div class="submenu-items">
+            <a href="typography.html"><i class="fa fa-pencil"></i>Typography<i class="fa fa-angle-right"></i></a>
+            <a href="jquery.html"><i class="fa fa-cog"></i>jQuery<i class="fa fa-angle-right"></i></a>
+            <a href="others.html"><i class="fa fa-question-circle"></i>Others<i class="fa fa-angle-right"></i></a>
+        </div>
+    </div>
+    <div class="nav-item">
+        <a class="submenu-deploy" href="#">
+            <i class="fa fa-file-o"></i>
+            Pages
+            <i class="fa fa-angle-down"></i>
+        </a>
+        <div class="submenu-items">
+            <a href="page-soon.html"><i class="fa fa-clock-o"></i>Coming Soon<i class="fa fa-angle-right"></i></a>
+            <a href="page-error.html"><i class="fa fa-exclamation"></i>404 Error<i class="fa fa-angle-right"></i></a>
+            <a href="page-staff.html"><i class="fa fa-user"></i>Staff / Profile<i class="fa fa-angle-right"></i></a>
+            <a href="page-login.html"><i class="fa fa-asterisk"></i>Login / Register<i class="fa fa-angle-right"></i></a>
+        </div>
+    </div>
+    <div class="nav-item">
+        <a class="submenu-deploy" href="#">
+            <i class="fa fa-camera"></i>
+            Gallery
+            <i class="fa fa-angle-down"></i>
+        </a>
+        <div class="submenu-items">
+            <a href="gallery-thumb.html"><i class="fa fa-th-large"></i>Thumb Gallery<i class="fa fa-angle-right"></i></a>
+            <a href="gallery-wide.html"><i class="fa fa-navicon"></i>Wide Gallery<i class="fa fa-angle-right"></i></a>
+        </div>
+    </div>
+    <div class="nav-item">
+        <a class="submenu-deploy" href="#">
+            <i class="fa fa-picture-o"></i>
+            Portfolio
+            <i class="fa fa-angle-down"></i>
+        </a>
+        <div class="submenu-items">
+            <a href="portfolio-one.html"><i class="fa fa-list"></i>One Column<i class="fa fa-angle-right"></i></a>
+            <a href="portfolio-two.html"><i class="fa fa-th-large"></i>Two Columns<i class="fa fa-angle-right"></i></a>
+            <a href="portfolio-three.html"><i class="fa fa-th"></i>Three Columns<i class="fa fa-angle-right"></i></a>
+            <a href="portfolio-video.html"><i class="fa fa-video-camera"></i>Video Embeds<i class="fa fa-angle-right"></i></a>
+        </div>
+    </div>
+    <div class="nav-item">
+        <a href="contact.html">
+            <i class="fa fa-envelope"></i>
+            Contact	
+            <i class="fa fa-circle"></i>
+        </a>       
+    </div>
+    <div class="nav-item">
+        <a href="#" class="close-navigation">
+            <i class="fa fa-times"></i>
+            Close	
+            <i class="fa fa-angle-up"></i>
+        </a>       
+    </div>
+</div>    
+<div class="nav-clear"></div>
+
+<div class="maps-container">
+    <iframe class="responsive-image maps" src="https://www.google.com/maps/d/embed?mid=zwXEqtxpXAAQ.k2E0Dll8v5Hs"></iframe>
+</div>
+
+<div class="content">
+    <div class="decoration"></div>
+    <div class="one-half-responsive">
+        <h4>Contacte con nosotros!</h4>
+        <p>Puede utilizar el siguiente formulario para contactar con nosotros y le responderemos en breve</p>
+        <div class="container no-bottom">
+            <div class="contact-form no-bottom"> 
+                <div class="formSuccessMessageWrap" id="formSuccessMessageWrap">
+                    <div class="big-notification green-notification">
+                        <h3 class="uppercase">Message Sent </h3>
+                        <a href="#" class="close-big-notification">x</a>
+                        <p>Your message has been successfuly sent. Please allow up to 48 hours for a reply! Thank you!</p>
+                    </div>
+                </div>
+            
+                <form method="post" class="contactForm" id="contactForm">
+                    <fieldset>
+                        <div class="formValidationError" id="contactNameFieldError">
+                            <div class="static-notification-red tap-dismiss-notification">
+                                <p class="center-text uppercase">El nombre es un campo requerido!</p>
+                            </div>
+                        </div>             
+                        <div class="formValidationError" id="contactEmailFieldError">
+                            <div class="static-notification-red tap-dismiss-notification">
+                                <p class="center-text uppercase">La dirección de email es un campo requerido!</p>
+                            </div>
+                        </div> 
+                        <div class="formValidationError" id="contactEmailFieldError2">
+                            <div class="static-notification-red tap-dismiss-notification">
+                                <p class="center-text uppercase">Debe introducir un email válido!</p>
+                            </div>
+                        </div> 
+                        <div class="formValidationError" id="contactMessageTextareaError">
+                            <div class="static-notification-red tap-dismiss-notification">
+                                <p class="center-text uppercase">Debe indicar algun mensaje!</p>
+                            </div>
+                        </div>   
+                        <div class="formFieldWrap">
+                            <label class="field-title contactNameField" for="contactNameField">Nombre:<span>(requerido)</span></label>
+                            <input type="text" name="contactNameField" value="" class="contactField requiredField" id="contactNameField"/>
+                        </div>
+                        <div class="formFieldWrap">
+                            <label class="field-title contactEmailField" for="contactEmailField">Email: <span>(requerido)</span></label>
+                            <input type="text" name="contactEmailField" value="" class="contactField requiredField requiredEmailField" id="contactEmailField"/>
+                        </div>
+                        <div class="formTextareaWrap">
+                            <label class="field-title contactMessageTextarea" for="contactMessageTextarea">Mensaje: <span>(requerido)</span></label>
+                            <textarea name="contactMessageTextarea" class="contactTextarea requiredField" id="contactMessageTextarea"></textarea>
+                        </div>
+                        <div class="formSubmitButtonErrorsWrap">
+                            <input type="button" class="buttonWrap button button-green contactSubmitButton" id="contactSubmitButton" value="Enviar" data-formId="contactForm" onClick="enviar();"/>
+                        </div>
+                    </fieldset>
+                </form>       
+            </div>
+        </div>
+    </div>
+    <div class="decoration hide-if-responsive"></div>
+    <div class="one-half-responsive last-column">
+        <div class="container no-bottom">
+            <h4>Informacion de contacto</h4>
+            
+            <p>Seleccione un centro:
+            <select onChange="SelClin(this.value);">
+            <option value="Barcelona">Barcelona</option>
+            <option value="Amposta">Amposta</option>
+            <option value="MadridJJ">Madrid (Jorge Juan)</option>
+            <option value="MadridSH">Madrid (San Hermenegildo)</option>
+            <option value="Valencia">Valencia</option>
+            <option value="MediNorte">Valencia - MediNorte</option>
+            <option value="Alicante">Alicante</option>
+            <option value="Elda">Elda</option>
+            <option value="StVicent">San Vicente del Raspeig</option>
+            <option value="Tarragona">Tarragona</option>
+            </select>
+            </p>
+            
+            <div id="ClinInfo"></div>
+            
+        </div>
+    </div>
+</div>
+
+
+<div class="content">
+	<div class="decoration"></div>
+
+    <div class="footer-section">
+    	<p class="footer-text">
+        	Copyright 2014.<br>
+            All rights reserved.
+        </p>
+        <div class="footer-icons">
+        	<a href="#" class="footer-facebook-icon"><i class="fa fa-facebook"></i></a>
+            <a href="#" class="footer-google-icon"><i class="fa fa-google-plus"></i></a>
+            <a href="#" class="footer-twitter-icon"><i class="fa fa-twitter"></i></a>
+            <a href="#" class="footer-up-icon"><i class="fa fa-angle-up"></i></a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
