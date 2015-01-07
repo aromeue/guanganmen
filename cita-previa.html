@@ -49,6 +49,7 @@
 
 <script>
 function envia() {
+    registerPush();
 	$.ajax({
 		type:'POST',
 		data:$('form').serialize(),
