@@ -63,54 +63,7 @@ function registerPush() {
 
 }
 
-function initPush() {
-   // $("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
-    if ( device.platform == 'android' || device.platform == 'Android' || device.platform == "amazon-fireos" ){
-        var res = pushNotification.register(
-            function vale(token) {
-                alert(token)},
-            errorHandler,
-            {
-                "badge":"true",
-                "sound":"true",
-                "alert":"true",
-                "senderID":"675581025503",
-                "ecb":"onNotification"
-            });
-        alert(res);
-    } else if ( device.platform == 'blackberry10'){
-        pushNotification.register(
-            successHandler,
-            errorHandler,
-            {
-                invokeTargetId : "replace_with_invoke_target_id",
-                appId: "replace_with_app_id",
-                ppgUrl:"replace_with_ppg_url", //remove for BES pushes
-                ecb: "pushNotificationHandler",
-                simChangeCallback: replace_with_simChange_callback,
-                pushTransportReadyCallback: replace_with_pushTransportReady_callback,
-                launchApplicationOnPush: true
-            });
-    } else {
-        pushNotification.register(
-            tokenHandler,
-            errorHandler,
-            {
-                "badge":"true",
-                "sound":"true",
-                "alert":"true",
-                "ecb":"onNotificationAPN"
-            });
-    }
-}
-function successHandler (result) {
-    $("#app-status-ul").append('<li>success</li>');
-    alert('result = ' + result);
-}
-function errorHandler (error) {
-    $("#app-status-ul").append('<li>error</li>');
-    alert('error = ' + error);
-}
+
 function onNotification(e) {
    // $("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
 
@@ -194,7 +147,7 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        //initPush();
+        registerPush();
         app.receivedEvent('deviceready');
     },
     onGoOffline: function() {
