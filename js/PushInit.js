@@ -102,16 +102,16 @@ function onNotification(e) {
                 if ( e.coldstart )
                 {
                     //$("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
-                    console.log('--COLDSTART NOTIFICATION--')
+                    alert('--COLDSTART NOTIFICATION--')
                 }
                 else
                 {
                     //$("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
-                    console.log('--BACKGROUND NOTIFICATION--')
+                    alert('--BACKGROUND NOTIFICATION--')
                 }
             }
-
-           // $("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
+            alert('MESSAGE -> MSG: ' + e.payload.message + '\nMESSAGE -> MSGCNT: ' + e.payload.msgcnt);
+            // $("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
             //Only works for GCM
             //$("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
             //Only works on Amazon Fire OS
