@@ -1802,7 +1802,7 @@ table tr:hover td{
 	display:block!important;
 	padding-bottom:0px;	
 	box-sizing:border-box;
-	max-height:150px;
+	max-height:200px;
 	overflow:hidden;
 	margin-bottom:30px;
 }
@@ -1811,6 +1811,7 @@ table tr:hover td{
 	display:block!important;
 	width:100%;
 	overflow:hidden;
+	height:200px;
 }
 
 /*/////////*/
