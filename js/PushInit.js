@@ -44,27 +44,27 @@ function checkConnection() {
 }
 
 function registerPush() {
-    $("#app-status-ul").append("<li>Creant pushNotificaion</li>");
+    //$("#app-status-ul").append("<li>Creant pushNotificaion</li>");
     var pushNotification = window.plugins.pushNotification;
 
-    $("#app-status-ul").append("<li>Registrant</li>");
+    //$("#app-status-ul").append("<li>Registrant</li>");
     var res = pushNotification.register(
-        function (token) {
+        /*function (token) {
             $("#app-status-ul").append("<li>Token:"+token+"</li>");
         },
         function (error) {
             $("#app-status-ul").append("<li>Error:"+error+"</li>");
-        },
+        },*/
         {
             "senderID":"675581025503",
             "ecb":"onNotification"
         });
-    $("#app-status-ul").append("<li>Resultat:"+res+"</li>");
+   // $("#app-status-ul").append("<li>Resultat:"+res+"</li>");
 
 }
 
 function initPush() {
-    $("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
+   // $("#app-status-ul").append('<li>registering ' + device.platform + '</li>');
     if ( device.platform == 'android' || device.platform == 'Android' || device.platform == "amazon-fireos" ){
         var res = pushNotification.register(
             function vale(token) {
@@ -112,14 +112,14 @@ function errorHandler (error) {
     alert('error = ' + error);
 }
 function onNotification(e) {
-    $("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
+   // $("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
 
     switch( e.event )
     {
         case 'registered':
             if ( e.regid.length > 0 )
             {
-                $("#app-status-ul").append('<li>REGISTERED -> REGID:' + e.regid + "</li>");
+              //  $("#app-status-ul").append('<li>REGISTERED -> REGID:' + e.regid + "</li>");
                 // Your GCM push server needs to know the regID before it can push to this device
                 // here is where you might want to send it the regID for later use.
                 console.log("regID = " + e.regid);
@@ -132,7 +132,7 @@ function onNotification(e) {
             // you might want to play a sound to get the user's attention, throw up a dialog, etc.
             if ( e.foreground )
             {
-                $("#app-status-ul").append('<li>--INLINE NOTIFICATION--' + '</li>');
+             //   $("#app-status-ul").append('<li>--INLINE NOTIFICATION--' + '</li>');
 
                 // on Android soundname is outside the payload.
                 // On Amazon FireOS all custom attributes are contained within payload
@@ -143,21 +143,24 @@ function onNotification(e) {
             }
             else
             {  // otherwise we were launched because the user touched a notification in the notification tray.
+
                 if ( e.coldstart )
                 {
-                    $("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
+                    //$("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
+                    console.log('--COLDSTART NOTIFICATION--')
                 }
                 else
                 {
-                    $("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
+                    //$("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
+                    console.log('--BACKGROUND NOTIFICATION--')
                 }
             }
 
-            $("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
+           // $("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
             //Only works for GCM
-            $("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
+            //$("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
             //Only works on Amazon Fire OS
-            $status.append('<li>MESSAGE -> TIME: ' + e.payload.timeStamp + '</li>');
+            //$status.append('<li>MESSAGE -> TIME: ' + e.payload.timeStamp + '</li>');
             break;
 
         case 'error':
