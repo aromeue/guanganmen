@@ -6,7 +6,7 @@
     id              = "app.clinicas.guanganmen"
     version         = "2.1.0">
 	
-	<preference name="phonegap-version" value="3.0.0" />
+	<preference name="phonegap-version" value="3.3.0" />
 	
     <name>Guang An Men</name>
     <description>
