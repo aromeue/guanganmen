@@ -116,8 +116,7 @@ function onNotification(e) {
             }
             alert('MESSAGE -> MSG: ' + e.payload.message + '\nMESSAGE -> MSGCNT: ' + e.payload.msgcnt);
 		*/
-			
-            alert(JSON.stringify(e.payload));
+            alert(JSON.stringify(e));
             //Only works for GCM
             //$("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
             //Only works on Amazon Fire OS
