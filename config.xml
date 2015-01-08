@@ -71,16 +71,14 @@
 		<param name="android-package" value="com.plugin.gcm.PushPlugin" />
 	</feature>
 
-	<gap:plugin name="com.phonegap.plugins.facebookconnect"  source="plugins.cordova.io" >
+	<gap:plugin name="com.phonegap.plugins.facebookconnect" >
 		<param name="APP_ID" value="549790568449986" />
 		<param name="APP_NAME" value="OfferDelta" />
 	</gap:plugin>
 	
-	<!--
 	<feature name="FacebookConnectPlugin">
 		<param name="android-package" value="org.apache.cordova.facebook.ConnectPlugin" />
 	</feature>
-	-->
 
     <access origin="*"/> <!-- allow local pages -->
 </widget>
