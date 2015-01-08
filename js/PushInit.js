@@ -102,11 +102,10 @@ function onNotification(e) {
             }
             else
             {  // otherwise we were launched because the user touched a notification in the notification tray.
-			
                 if ( e.coldstart )
                 {
                     //$("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
-                    alert(e.payload.goto);
+                    alert('nse cuan entra');
                 }
                 else
                 {
@@ -115,8 +114,8 @@ function onNotification(e) {
                     //alert('--BACKGROUND NOTIFICATION--')
                     alert(e.payload.goto);
                 }
-
-            }/*
+            }
+            /*
             alert('MESSAGE -> MSG: ' + e.payload.message + '\nMESSAGE -> MSGCNT: ' + e.payload.msgcnt);
 
             alert(JSON.stringify(e));*/
