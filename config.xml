@@ -76,10 +76,11 @@
 		<param name="APP_NAME" value="OfferDelta" />
 	</gap:plugin>
 	
+	<!--
 	<feature name="FacebookConnectPlugin">
 		<param name="android-package" value="org.apache.cordova.facebook.ConnectPlugin" />
 	</feature>
-
+	-->
 
     <access origin="*"/> <!-- allow local pages -->
 </widget>
