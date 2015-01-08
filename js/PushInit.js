@@ -99,7 +99,6 @@ function onNotification(e) {
                 var my_media = new Media("/android_asset/www/"+ soundfile);
                 my_media.play();
             }
-
             else
             {  // otherwise we were launched because the user touched a notification in the notification tray.
 			
@@ -108,12 +107,13 @@ function onNotification(e) {
                     //$("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
                     alert(e.payload.goto);
                 }
-/*                else
+                else
                 {
+
                     //$("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
                     alert('--BACKGROUND NOTIFICATION--')
                 }
-*/
+
             }/*
             alert('MESSAGE -> MSG: ' + e.payload.message + '\nMESSAGE -> MSGCNT: ' + e.payload.msgcnt);
 
