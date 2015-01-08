@@ -67,7 +67,7 @@
 	
 	<gap:plugin name="com.phonegap.plugins.pushplugin" source="plugins.cordova.io" />
 
-	<gap:plugin name="com.phonegap.plugins.facebookconnect" >
+	<gap:plugin name="com.phonegap.plugins.facebookconnect"  source="plugins.cordova.io" >
 		<param name="APP_ID" value="549790568449986" />
 		<param name="APP_NAME" value="OfferDelta" />
 	</gap:plugin>
