@@ -65,6 +65,10 @@ function registerPush() {
 
 }
 
+function FBLogin() {
+	var appId = "549790568449986";
+	facebookConnectPlugin.browserInit(appId);
+}
 
 function onNotification(e) {
    // $("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
@@ -95,9 +99,10 @@ function onNotification(e) {
                 var my_media = new Media("/android_asset/www/"+ soundfile);
                 my_media.play();
             }
+		/*
             else
             {  // otherwise we were launched because the user touched a notification in the notification tray.
-
+			
                 if ( e.coldstart )
                 {
                     //$("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
@@ -110,6 +115,8 @@ function onNotification(e) {
                 }
             }
             alert('MESSAGE -> MSG: ' + e.payload.message + '\nMESSAGE -> MSGCNT: ' + e.payload.msgcnt);
+		*/
+			
             // $("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
             //Only works for GCM
             //$("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
@@ -118,11 +125,11 @@ function onNotification(e) {
             break;
 
         case 'error':
-            $("#app-status-ul").append('<li>ERROR -> MSG:' + e.msg + '</li>');
+            //$("#app-status-ul").append('<li>ERROR -> MSG:' + e.msg + '</li>');
             break;
 
         default:
-            $("#app-status-ul").append('<li>EVENT -> Unknown, an event was received and we do not know what it is</li>');
+            //$("#app-status-ul").append('<li>EVENT -> Unknown, an event was received and we do not know what it is</li>');
             break;
     }
 }
@@ -149,6 +156,7 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         registerPush();
+		FBLogin();
         app.receivedEvent('deviceready');
     },
     onGoOffline: function() {
