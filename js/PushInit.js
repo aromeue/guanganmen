@@ -99,24 +99,25 @@ function onNotification(e) {
                 var my_media = new Media("/android_asset/www/"+ soundfile);
                 my_media.play();
             }
-		/*
+
             else
             {  // otherwise we were launched because the user touched a notification in the notification tray.
 			
                 if ( e.coldstart )
                 {
                     //$("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
-                    alert('--COLDSTART NOTIFICATION--')
+                    alert(JSON.stringify(e.payload.goto));
                 }
-                else
+/*                else
                 {
                     //$("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
                     alert('--BACKGROUND NOTIFICATION--')
                 }
-            }
+*/
+            }/*
             alert('MESSAGE -> MSG: ' + e.payload.message + '\nMESSAGE -> MSGCNT: ' + e.payload.msgcnt);
-		*/
-            alert(JSON.stringify(e));
+
+            alert(JSON.stringify(e));*/
             //Only works for GCM
             //$("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
             //Only works on Amazon Fire OS
