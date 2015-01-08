@@ -66,16 +66,19 @@
 	<gap:plugin name="org.apache.cordova.network-information"  source="plugins.cordova.io" />
 	
 	<gap:plugin name="com.phonegap.plugins.pushplugin" source="plugins.cordova.io" />
+	
+	<feature name="PushPlugin">
+		<param name="android-package" value="com.plugin.gcm.PushPlugin" />
+	</feature>
 
 	<gap:plugin name="com.phonegap.plugins.facebookconnect"  source="plugins.cordova.io" >
 		<param name="APP_ID" value="549790568449986" />
 		<param name="APP_NAME" value="OfferDelta" />
 	</gap:plugin>
 	
-	<feature name="PushPlugin">
-	  <param name="android-package" value="com.plugin.gcm.PushPlugin" />
+	<feature name="FacebookConnectPlugin">
+		<param name="android-package" value="org.apache.cordova.facebook.ConnectPlugin" />
 	</feature>
-
 
 
     <access origin="*"/> <!-- allow local pages -->
