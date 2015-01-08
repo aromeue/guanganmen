@@ -98,6 +98,7 @@ function onNotification(e) {
                 // if the notification contains a soundname, play it.
                 var my_media = new Media("/android_asset/www/"+ soundfile);
                 my_media.play();
+                $('body').append('<div class="big-notification red-notification"><h4 class="uppercase">'+e.payload.title+'</h4><a href="#" class="close-big-notification">x</a><p>'+e.payload.message+' <a href="#">'+e.payload.goto+'</a></p></div>');
             }
             else
             {  // otherwise we were launched because the user touched a notification in the notification tray.
@@ -111,7 +112,8 @@ function onNotification(e) {
                 {
 
                     //$("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
-                    alert('--BACKGROUND NOTIFICATION--')
+                    //alert('--BACKGROUND NOTIFICATION--')
+                    alert(e.payload.goto);
                 }
 
             }/*
