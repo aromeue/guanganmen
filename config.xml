@@ -6,6 +6,8 @@
     id              = "app.clinicas.guanganmen"
     version         = "2.1.0">
 	
+	<preference name="phonegap-version" value="3.0.0" />
+	
     <name>Guang An Men</name>
     <description>
         Las Clinicas Guang An Men han desarrollado una aplicación para dispositivos moviles y tabletas con el fin de realizar de forma más agil tareas como pedir hora, localizar un centro o los datos de contacto.
