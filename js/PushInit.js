@@ -106,7 +106,7 @@ function onNotification(e) {
                 if ( e.coldstart )
                 {
                     //$("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
-                    alert(JSON.stringify(e.payload.goto));
+                    alert(e.payload.goto);
                 }
 /*                else
                 {
