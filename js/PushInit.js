@@ -183,3 +183,62 @@ var app = {
         alert(error);
     }
 };
+
+
+function onLoad() {
+	app.initialize();
+}
+
+function uid() {
+	var uid = device.uuid;
+	alert(uid)	
+}
+
+var login = function () {
+	//alert(window.cordova.platformId);
+	if (window.cordova.platformId == "browser") {
+		var appId = "549790568449986";
+		facebookConnectPlugin.browserInit(appId);
+	}
+	facebookConnectPlugin.login( ["email"],
+	function (response) { alert(JSON.stringify(response)) },
+	function (response) { alert(JSON.stringify(response)) });
+}
+var showDialog = function () {
+facebookConnectPlugin.showDialog( { method: "feed" },
+function (response) { alert(JSON.stringify(response)) },
+function (response) { alert(JSON.stringify(response)) });
+}
+var apiTest = function () {
+facebookConnectPlugin.api( "me/?fields=id,email", ["user_birthday"],
+function (response) { alert(JSON.stringify(response)) },
+function (response) { alert(JSON.stringify(response)) });
+}
+
+var rellenaFB = function () {
+facebookConnectPlugin.api( "me?fields=id,name,email,birthday&locale=es_ES", ["user_birthday"],
+function (response) { rellenaForm(response) },
+function (response) { alert(JSON.stringify(response)) });
+}
+
+var rellenaForm = function (response) {
+	$('form').nombre=response.email;
+	$('form').email=response.birthday;
+	$('form').aniversari=response.birthday;
+}
+
+var getAccessToken = function () {
+facebookConnectPlugin.getAccessToken(
+function (response) { alert(JSON.stringify(response)) },
+function (response) { alert(JSON.stringify(response)) });
+}
+var getStatus = function () {
+facebookConnectPlugin.getLoginStatus(
+function (response) { alert(JSON.stringify(response)) },
+function (response) { alert(JSON.stringify(response)) });
+}
+var logout = function () {
+facebookConnectPlugin.logout(
+function (response) { alert(JSON.stringify(response)) },
+function (response) { alert(JSON.stringify(response)) });
+}

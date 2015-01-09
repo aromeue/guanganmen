@@ -41,8 +41,7 @@
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script> <!-- Llibreria Cordova/Phonegap -->
 <script type="text/javascript" charset="utf-8" src="cordova_plugins.js"></script> <!-- Llibreria Plugins -->
 
-<script type="text/javascript" charset="utf-8" src="js/PushNotification.js"></script> <!-- Llibreria plugin PushWoosh -->
-<script type="text/javascript" charset="utf-8" src="js/PushInit.js"></script> <!-- Funcions Inicialitza PushWoosh -->
+<script type="text/javascript" charset="utf-8" src="js/PushInit.js"></script> <!-- Funcions Inicialitza Push i altres -->
 
 <script src="js/cdv-plugin-fb-connect.js"></script>   <!--  Llibreria Facebook  -->
 <script src="js/facebook_js_sdk.js"></script>   <!--  Llibreria Facebook  -->
@@ -66,28 +65,10 @@ function envia() {
 		}
 	});
 }
-
-function uid() {
-	var uid = device.uuid;
-	alert(uid)	
-}
-function hola() {
-	alert("hola");
-}
-
-function onLoad() {
-	document.addEventListener('deviceready', hola(), false);
-	document.addEventListener("deviceready", initPushwoosh, true);
-}
-
 </script>
-
-
 </head>
+
 <body onLoad="onLoad();">
-<script type="text/javascript">
-	app.initialize();
-</script>
 
 <div id="preloader">
 	<div id="status">
@@ -209,57 +190,6 @@ function onLoad() {
 <div id="fb-root"></div>
 
 
-<script type="text/javascript">
-var login = function () {
-	alert(window.cordova.platformId);
-if (window.cordova.platformId == "browser") {
-var appId = "549790568449986";
-facebookConnectPlugin.browserInit(appId);
-}
-facebookConnectPlugin.login( ["email"],
-function (response) { alert(JSON.stringify(response)) },
-function (response) { alert(JSON.stringify(response)) });
-}
-var showDialog = function () {
-facebookConnectPlugin.showDialog( { method: "feed" },
-function (response) { alert(JSON.stringify(response)) },
-function (response) { alert(JSON.stringify(response)) });
-}
-var apiTest = function () {
-facebookConnectPlugin.api( "me/?fields=id,email", ["user_birthday"],
-function (response) { alert(JSON.stringify(response)) },
-function (response) { alert(JSON.stringify(response)) });
-}
-
-var rellenaFB = function () {
-facebookConnectPlugin.api( "me?fields=id,name,email,birthday&locale=es_ES", ["user_birthday"],
-function (response) { rellenaForm(response) },
-function (response) { alert(JSON.stringify(response)) });
-}
-
-var rellenaForm = function (response) {
-	alert(response.email);
-	alert(response.birthday);
-}
-
-var getAccessToken = function () {
-facebookConnectPlugin.getAccessToken(
-function (response) { alert(JSON.stringify(response)) },
-function (response) { alert(JSON.stringify(response)) });
-}
-var getStatus = function () {
-facebookConnectPlugin.getLoginStatus(
-function (response) { alert(JSON.stringify(response)) },
-function (response) { alert(JSON.stringify(response)) });
-}
-var logout = function () {
-facebookConnectPlugin.logout(
-function (response) { alert(JSON.stringify(response)) },
-function (response) { alert(JSON.stringify(response)) });
-}
-</script>
-
-
 <div class="content" data-role="page">
 	<div class="container no-bottom">
     	<h3>Cita previa</h3>
@@ -275,11 +205,15 @@ function (response) { alert(JSON.stringify(response)) });
     	<label>Nombre: </label> <input type="text" name="nombre" id="nombre" placeholder="Indiquenos su nombre" >
     </p>
     <p>
-    	<label>Email: </label> <input type="email" name="email" id="email" placeholder="Indiquenos su e-mail" >
+    	<label>Email: </label> <input type="text" name="email" id="email" placeholder="Indiquenos su e-mail" >
+    </p>
+    <p>
+    	<label>Nacimiento: </label> <input type="text" name="aniversari" id="aniversari" placeholder="Indique su fecha de nacimiento" >
     </p>
     <p>
     	<label>Centro: </label> 
         <select name="centro" id="centro">
+        	<option value="##" selected>Seleccione un centro</option>
         	<option value="MadridSH">Madrid (San Hermenegildo)</option>
             <option value="MadridJJ">Madrid (Jorje Juan)</option>
             <option value="Barcelona">Barcelona</option>
