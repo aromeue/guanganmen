@@ -222,9 +222,9 @@ function (response) { alert(JSON.stringify(response)) });
 }
 
 var rellenaForm = function (response) {
-	$('form').nombre=response.email;
-	$('form').email=response.birthday;
-	$('form').aniversari=response.birthday;
+	$('#nombre').val(response.name);
+	$('#email').val(response.email);
+	$('#aniversari').val(response.birthday);
 }
 
 var getAccessToken = function () {
